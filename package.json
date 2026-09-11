@@ -1,0 +1,26 @@
+{
+  "name": "ffmpeg-video-stream",
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev --filter=api... --filter=worker... --filter=web",
+    "dev:all": "turbo run dev",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "check-types": "turbo run check-types",
+    "db:generate": "pnpm --filter @repo/db db:generate",
+    "db:push": "pnpm --filter @repo/db db:push",
+    "storage:bootstrap": "pnpm --filter @repo/storage bootstrap",
+    "docker:infra": "docker compose up -d postgres redis minio minio-init",
+    "docker:full": "docker compose --profile full up --build"
+  },
+  "devDependencies": {
+    "prettier": "3.9.6",
+    "turbo": "^2.10.12",
+    "typescript": "7.0.2"
+  },
+  "packageManager": "pnpm@11.25.0",
+  "engines": {
+    "node": ">=24"
+  }
+}

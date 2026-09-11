@@ -1,0 +1,28 @@
+{
+  "name": "worker",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "check-types": "tsc --noEmit",
+    "lint": "eslint . --max-warnings 0"
+  },
+  "dependencies": {
+    "@repo/db": "workspace:*",
+    "@repo/queue": "workspace:*",
+    "@repo/shared": "workspace:*",
+    "@repo/storage": "workspace:*",
+    "dotenv": "^17.4.2"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "@types/node": "26.4.1",
+    "eslint": "10.9.1",
+    "tsx": "^4.20.5",
+    "typescript": "7.0.2"
+  }
+}
